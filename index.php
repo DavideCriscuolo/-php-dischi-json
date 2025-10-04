@@ -21,14 +21,29 @@ require_once("./functions.php");
 
     <main>
         <div class="container py-5 d-flex gap-3  ">
+            <div class="row row-cols-4">
+
+                <?php
+                foreach ($listDischi as $disco) {
 
 
+                ?>
+                    <div class="col">
+                        <div class="card text-start">
+                            <img class="card-img-top" src="<?php echo $disco["url_cover"] ?>" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title"><?php echo $disco["titolo"] ?></h4>
+                                <h5 class="card-text"><?php echo $disco["artista"] ?></h5>
+                                <p class="card-text"><?php echo $disco["anno_pubblicazione"] ?></p>
+                                <p class="card-text"><?php echo $disco["genere"] ?></p>
+                            </div>
+                        </div>
 
-            <?php
-            foreach ($listDischi as $disco) {
-                echo " <div class=card text-start style= width:300px>" . "<img class= w-100  card-img-top" . " src = " . $disco["url_cover"] . " alt=Title   />" . "<div class=card-body>" . "<h4 class=card-title>" . $disco["titolo"] . "</h4>" . "<h6>" . $disco["artista"] . "</h6>" . "</div></div>";
-            };
-            ?>
+                    </div>
+                <?php }; ?>
+            </div>
+
+
 
 
         </div>
